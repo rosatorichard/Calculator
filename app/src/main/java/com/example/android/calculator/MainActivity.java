@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private double sum=0;
     private TextView text;
     private Boolean isTrue=false;
+    private Boolean on=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         {
             newCalc();
         }
+        on=false;
         currentNum.append("0");
         text.setText(oldNum+calc+currentNum);
     }
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         {
             newCalc();
         }
+        on=false;
         currentNum.append("1");
         text.setText(oldNum+calc+currentNum);
     }
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         {
             newCalc();
         }
+        on=false;
         currentNum.append("2");
         text.setText(oldNum+calc+currentNum);
     }
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         {
             newCalc();
         }
+        on=false;
         currentNum.append("3");
         text.setText(oldNum+calc+currentNum);
     }
@@ -63,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         {
             newCalc();
         }
+        on=false;
         currentNum.append("4");
         text.setText(oldNum+calc+currentNum);
     }
@@ -72,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         {
             newCalc();
         }
+        on=false;
         currentNum.append("5");
         text.setText(oldNum+calc+currentNum);
     }
@@ -81,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         {
             newCalc();
         }
+        on=false;
         currentNum.append("6");
         text.setText(oldNum+calc+currentNum);
     }
@@ -90,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         {
             newCalc();
         }
+        on=false;
         currentNum.append("7");
         text.setText(oldNum+calc+currentNum);
     }
@@ -99,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         {
             newCalc();
         }
+        on=false;
         currentNum.append("8");
         text.setText(oldNum+calc+currentNum);
 
@@ -109,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
         {
             newCalc();
         }
+        on=false;
         currentNum.append("9");
         text.setText(oldNum+calc+currentNum);
     }
@@ -128,168 +139,179 @@ public class MainActivity extends AppCompatActivity {
             currentNum.append(".");
             text.setText((oldNum+calc+currentNum));
         }
+        on=false;
     }
 
     public void minus(View view) {
 
-        isTrue=false;
-
-        if(calc!="")
+        if(currentNum.length()==0 && oldNum.length()==0 || on==true)
         {
-            switch(calc)
-            {
-                case " + ":
-                    sum=Double.parseDouble(oldNum.toString())+Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " - ":
-                    sum=Double.parseDouble(oldNum.toString())-Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " x ":
-                    sum=Double.parseDouble(oldNum.toString())*Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " / ":
-                    sum=Double.parseDouble(oldNum.toString())/Double.parseDouble(currentNum.toString());
-                    break;
-
-            }
-            calc=" - ";
-            oldNum.setLength(0);
-            oldNum.append(sum);
-            currentNum.setLength(0);
 
         }
-        else
-        {
-            oldNum.append(currentNum);
-            calc=" - ";
-            currentNum.setLength(0);
+        else if(currentNum.length()!=0 ||currentNum.length()==0&& oldNum.length()!=0){
+            if (calc != "" || isTrue==true) {
+                on=true;
+                isTrue=false;
+                switch (calc) {
+                    case " + ":
+                        sum = Double.parseDouble(oldNum.toString()) + Double.parseDouble(currentNum.toString());
+                        break;
 
+                    case " - ":
+                        sum = Double.parseDouble(oldNum.toString()) - Double.parseDouble(currentNum.toString());
+                        break;
+
+                    case " x ":
+                        sum = Double.parseDouble(oldNum.toString()) * Double.parseDouble(currentNum.toString());
+                        break;
+
+                    case " / ":
+                        sum = Double.parseDouble(oldNum.toString()) / Double.parseDouble(currentNum.toString());
+                        break;
+
+                }
+                calc = " - ";
+                oldNum.setLength(0);
+                oldNum.append(sum);
+                currentNum.setLength(0);
+
+            } else {
+                oldNum.append(currentNum);
+                calc = " - ";
+                currentNum.setLength(0);
+
+            }
         }
         text.setText(oldNum+calc+currentNum);
     }
 
     public void plus(View view) {
 
-        isTrue=false;
-
-        if(calc!="")
+        if(currentNum.length()==0 && oldNum.length()==0 || on==true)
         {
-            switch(calc)
-            {
-                case " + ":
-                    sum=Double.parseDouble(oldNum.toString())+Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " - ":
-                    sum=Double.parseDouble(oldNum.toString())-Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " x ":
-                    sum=Double.parseDouble(oldNum.toString())*Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " / ":
-                    sum=Double.parseDouble(oldNum.toString())/Double.parseDouble(currentNum.toString());
-                    break;
-
-            }
-            calc=" + ";
-            oldNum.setLength(0);
-            oldNum.append(sum);
-            currentNum.setLength(0);
 
         }
-        else
-        {
-            oldNum.append(currentNum);
-            calc=" + ";
-            currentNum.setLength(0);
+        else if(currentNum.length()!=0 ||currentNum.length()==0&& oldNum.length()!=0){
+            if (calc != "" || isTrue==true) {
+                isTrue=false;
+                on=true;
+                switch (calc) {
+                    case " + ":
+                        sum = Double.parseDouble(oldNum.toString()) + Double.parseDouble(currentNum.toString());
+                        break;
 
+                    case " - ":
+                        sum = Double.parseDouble(oldNum.toString()) - Double.parseDouble(currentNum.toString());
+                        break;
+
+                    case " x ":
+                        sum = Double.parseDouble(oldNum.toString()) * Double.parseDouble(currentNum.toString());
+                        break;
+
+                    case " / ":
+                        sum = Double.parseDouble(oldNum.toString()) / Double.parseDouble(currentNum.toString());
+                        break;
+
+                }
+                calc = " + ";
+                oldNum.setLength(0);
+                oldNum.append(sum);
+                currentNum.setLength(0);
+
+            } else {
+                oldNum.append(currentNum);
+                calc = " + ";
+                currentNum.setLength(0);
+
+            }
         }
         text.setText(oldNum+calc+currentNum);
     }
 
     public void times(View view) {
 
-        isTrue=false;
 
-        if(calc!="")
+        if(currentNum.length()==0 && oldNum.length()==0 || on==true)
         {
-            switch(calc)
-            {
-                case " + ":
-                    sum=Double.parseDouble(oldNum.toString())+Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " - ":
-                    sum=Double.parseDouble(oldNum.toString())-Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " x ":
-                    sum=Double.parseDouble(oldNum.toString())*Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " / ":
-                    sum=Double.parseDouble(oldNum.toString())/Double.parseDouble(currentNum.toString());
-                    break;
-
-            }
-            calc=" x ";
-            oldNum.setLength(0);
-            oldNum.append(sum);
-            currentNum.setLength(0);
 
         }
-        else
-        {
-            oldNum.append(currentNum);
-            calc=" x ";
-            currentNum.setLength(0);
+        else if(currentNum.length()!=0 ||currentNum.length()==0&& oldNum.length()!=0){
+            if (calc != "" || isTrue==true) {
+                on=true;
+                isTrue=false;
+                switch (calc) {
+                    case " + ":
+                        sum = Double.parseDouble(oldNum.toString()) + Double.parseDouble(currentNum.toString());
+                        break;
 
+                    case " - ":
+                        sum = Double.parseDouble(oldNum.toString()) - Double.parseDouble(currentNum.toString());
+                        break;
+
+                    case " x ":
+                        sum = Double.parseDouble(oldNum.toString()) * Double.parseDouble(currentNum.toString());
+                        break;
+
+                    case " / ":
+                        sum = Double.parseDouble(oldNum.toString()) / Double.parseDouble(currentNum.toString());
+                        break;
+
+                }
+                calc = " x ";
+                oldNum.setLength(0);
+                oldNum.append(sum);
+                currentNum.setLength(0);
+
+            } else {
+                oldNum.append(currentNum);
+                calc = " x ";
+                currentNum.setLength(0);
+
+            }
         }
         text.setText(oldNum+calc+currentNum);
     }
 
     public void divide(View view) {
 
-        isTrue=false;
 
-        if(calc!="")
+        if(currentNum.length()==0 && oldNum.length()==0 || on==true)
         {
-            switch(calc)
-            {
-                case " + ":
-                    sum=Double.parseDouble(oldNum.toString())+Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " - ":
-                    sum=Double.parseDouble(oldNum.toString())-Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " x ":
-                    sum=Double.parseDouble(oldNum.toString())*Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " / ":
-                    sum=Double.parseDouble(oldNum.toString())/Double.parseDouble(currentNum.toString());
-                    break;
-
-            }
-            calc=" / ";
-            oldNum.setLength(0);
-            oldNum.append(sum);
-            currentNum.setLength(0);
 
         }
-        else
-        {
-            oldNum.append(currentNum);
-            calc=" / ";
-            currentNum.setLength(0);
+        else if(currentNum.length()!=0 ||currentNum.length()==0&& oldNum.length()!=0){
+            if (calc != "" || isTrue==true) {
+                on=true;
+                isTrue=false;
+                switch (calc) {
+                    case " + ":
+                        sum = Double.parseDouble(oldNum.toString()) + Double.parseDouble(currentNum.toString());
+                        break;
 
+                    case " - ":
+                        sum = Double.parseDouble(oldNum.toString()) - Double.parseDouble(currentNum.toString());
+                        break;
+
+                    case " x ":
+                        sum = Double.parseDouble(oldNum.toString()) * Double.parseDouble(currentNum.toString());
+                        break;
+
+                    case " / ":
+                        sum = Double.parseDouble(oldNum.toString()) / Double.parseDouble(currentNum.toString());
+                        break;
+
+                }
+                calc = " / ";
+                oldNum.setLength(0);
+                oldNum.append(sum);
+                currentNum.setLength(0);
+
+            } else {
+                oldNum.append(currentNum);
+                calc = " / ";
+                currentNum.setLength(0);
+
+            }
         }
         text.setText(oldNum+calc+currentNum);
     }
@@ -304,9 +326,25 @@ public class MainActivity extends AppCompatActivity {
 
         public void percentage(View view) {
 
-            sum=Double.parseDouble(currentNum.toString())*.001;
-            currentNum.setLength(0);
-            currentNum.append(sum);
+            if(currentNum.length()==0)
+            {
+                if(oldNum.length()==0)
+                {
+
+                }
+                else
+                {
+                    sum = Double.parseDouble(oldNum.toString()) * .01;
+                    oldNum.setLength(0);
+                    oldNum.append(sum);
+                }
+            }
+            else
+            {
+                sum=Double.parseDouble(currentNum.toString())*.01;
+                currentNum.setLength(0);
+                currentNum.append(sum);
+            }
             text.setText(oldNum+calc+currentNum);
 
     }
@@ -322,37 +360,39 @@ public class MainActivity extends AppCompatActivity {
 
     public void equals(View view) {
 
-        if(calc!="")
+        if(currentNum.length()==0 && oldNum.length()==0)
         {
-            switch(calc)
-            {
-                case " + ":
-                    sum=Double.parseDouble(oldNum.toString())+Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " - ":
-                    sum=Double.parseDouble(oldNum.toString())-Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " x ":
-                    sum=Double.parseDouble(oldNum.toString())*Double.parseDouble(currentNum.toString());
-                    break;
-
-                case " / ":
-                    sum=Double.parseDouble(oldNum.toString())/Double.parseDouble(currentNum.toString());
-                    break;
-
-            }
-            calc="";
-            oldNum.setLength(0);
-            oldNum.append(sum);
-            currentNum.setLength(0);
 
         }
+        else if(currentNum.length()!=0) {
+            on=false;
+            if (calc != "") {
+                switch (calc) {
+                    case " + ":
+                        sum = Double.parseDouble(oldNum.toString()) + Double.parseDouble(currentNum.toString());
+                        break;
 
-        text.setText(oldNum+calc+currentNum);
-        isTrue=true;
+                    case " - ":
+                        sum = Double.parseDouble(oldNum.toString()) - Double.parseDouble(currentNum.toString());
+                        break;
 
+                    case " x ":
+                        sum = Double.parseDouble(oldNum.toString()) * Double.parseDouble(currentNum.toString());
+                        break;
+
+                    case " / ":
+                        sum = Double.parseDouble(oldNum.toString()) / Double.parseDouble(currentNum.toString());
+                        break;
+
+                }
+                calc = "";
+                oldNum.setLength(0);
+                oldNum.append(sum);
+                currentNum.setLength(0);
+            }
+            isTrue = true;
+            text.setText(oldNum + calc + currentNum);
+        }
 
     }
 
