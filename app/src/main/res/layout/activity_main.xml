@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20sp"
+    tools:context="com.example.android.calculator.MainActivity">
+
+    <TextView
+        android:id="@+id/tvOutput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/tvZero"
+        android:layout_below="@+id/tvOne"
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="zero"/>
+
+    <Button
+        android:id="@+id/tvOne"
+        android:text="1"
+        android:layout_below="@+id/tvFour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="one"/>
+
+    <Button
+        android:id="@+id/tvTwo"
+        android:text="2"
+        android:layout_toRightOf="@+id/tvOne"
+        android:layout_below="@+id/tvFive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="two"/>
+
+    <Button
+        android:id="@+id/tvThree"
+        android:text="3"
+        android:layout_toRightOf="@+id/tvTwo"
+        android:layout_below="@+id/tvSix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="three"/>
+
+    <Button
+        android:id="@+id/tvFour"
+        android:text="4"
+        android:layout_below="@+id/tvSeven"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="four"/>
+
+    <Button
+        android:id="@+id/tvFive"
+        android:text="5"
+        android:layout_toRightOf="@+id/tvFour"
+        android:layout_below="@+id/tvEight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="five"/>
+
+    <Button
+        android:id="@+id/tvSix"
+        android:text="6"
+        android:layout_toRightOf="@+id/tvFive"
+        android:layout_below="@+id/tvNine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="six"/>
+
+    <Button
+        android:id="@+id/tvSeven"
+        android:text="7"
+        android:layout_below="@+id/tvClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="seven"/>
+
+    <Button
+        android:id="@+id/tvEight"
+        android:text="8"
+        android:layout_toRightOf="@+id/tvSeven"
+        android:layout_below="@+id/tvClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="eight"/>
+
+    <Button
+        android:id="@+id/tvNine"
+        android:text="9"
+        android:layout_toRightOf="@+id/tvEight"
+        android:layout_below="@+id/tvPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="nine"/>
+
+    <Button
+        android:id="@+id/tvPoint"
+        android:text="."
+        android:layout_toRightOf="@+id/tvZero"
+        android:layout_below="@+id/tvTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="point"/>
+
+    <Button
+        android:id="@+id/tvMinus"
+        android:text="-"
+        android:layout_toRightOf="@+id/tvThree"
+        android:layout_below="@+id/tvTimes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="minus"/>
+
+    <Button
+        android:id="@+id/tvPlus"
+        android:text="+"
+        android:layout_toRightOf="@+id/tvEquals"
+        android:layout_below="@+id/tvMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="plus"/>
+
+    <Button
+        android:id="@+id/tvTimes"
+        android:text="x"
+        android:layout_toRightOf="@+id/tvSix"
+        android:layout_below="@+id/tvDivide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="times"/>
+
+    <Button
+        android:id="@+id/tvDivide"
+        android:text="/"
+        android:layout_toRightOf="@+id/tvNine"
+        android:layout_below="@+id/tvDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="divide"/>
+
+    <Button
+        android:id="@+id/tvClear"
+        android:text="Clr"
+        android:layout_toRightOf="@+id/tvOne"
+        android:layout_below="@+id/tvOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clear"/>
+
+    <Button
+        android:id="@+id/tvPercentage"
+        android:layout_toRightOf="@+id/tvClear"
+        android:text="%"
+        android:layout_below="@+id/tvOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="percentage"/>
+
+    <Button
+        android:id="@+id/tvDelete"
+        android:layout_toRightOf="@+id/tvPercentage"
+        android:text="Del"
+        android:layout_below="@+id/tvOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="delete"/>
+
+    <Button
+        android:id="@+id/tvEquals"
+        android:layout_toRightOf="@+id/tvPoint"
+        android:text="="
+        android:layout_below="@+id/tvThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="equals"/>
+
+</RelativeLayout>
